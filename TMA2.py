@@ -87,9 +87,9 @@ def TMA2b():
       makeProduct = makeProduct.upper()
       ''.join(sorted(makeProduct)) #To sort product code alphabetically
       #Validate the input
-      if validateInput(makeProduct) == "valid":
-        makeQuantity = input(f"Enter quantity to make: ")
-        if not makeQuantity.is_integer() or makeQuantity < 1:
+      if validateInput(makeProduct, partIds) == "valid":
+        makeQuantity = int(input(f"Enter quantity to make: "))
+        if makeQuantity < 1:
           print(f"Invalid quantity {makeQuantity}")
        
         #Check the stock and prepare to make the new product  
